@@ -16,13 +16,23 @@ public class UserDAOImpl implements UserDAO {
     @Override
     public void createUser(User user) throws SQLException {
         String sql = "INSERT INTO users (login, password, fio, phone, type) VALUES (?, ?, ?, ?, ?)";
-        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+        try (PreparedStatement stmt = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             stmt.setString(1, user.getLogin());
             stmt.setString(2, user.getPassword());
             stmt.setString(3, user.getFio());
             stmt.setString(4, user.getPhone());
             stmt.setString(5, user.getType());
-            stmt.executeUpdate();
+
+            int affectedRows = stmt.executeUpdate();
+
+            if (affectedRows > 0) {
+                try (ResultSet generatedKeys = stmt.getGeneratedKeys()) {
+                    if (generatedKeys.next()) {
+                        int newId = generatedKeys.getInt(1); // Изменено на getInt
+                        user.setUserID(newId); // Установите сгенерированный id обратно в объект User
+                    }
+                }
+            }
         }
     }
     @Override

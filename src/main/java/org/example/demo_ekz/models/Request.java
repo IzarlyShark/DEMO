@@ -14,7 +14,10 @@ public class Request {
     private String repairParts;
     private int masterID;
     private int clientID;
+    //пустой конструктор
+    public Request() {
 
+    }
     // Конструктор для первичного создания заявки
     public Request(String orgTechType, String orgTechModel, String problemDescription, int masterID, int clientID){
         this.startDate = new Date();
@@ -76,7 +79,7 @@ public class Request {
     public void setRepairParts(String repairParts) {
         this.repairParts = repairParts; // Устанавливает новую информацию о запчастях, использованных для ремонта
     }
-    public int getMaterID() {
+    public int getMasterID() {
         return masterID; // Возвращает идентификатор мастера
     }
     public void setMaterID(int materID) {

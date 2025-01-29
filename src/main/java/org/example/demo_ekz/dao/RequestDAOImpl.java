@@ -20,7 +20,7 @@ public class RequestDAOImpl implements RequestDAO {
             stmt.setString(1, request.getOrgTechType());
             stmt.setString(2, request.getOrgTechModel());
             stmt.setString(3, request.getProblemDescription());
-            stmt.setInt(4, request.getMaterID());
+            stmt.setInt(4, request.getMasterID());
             stmt.setInt(5, request.getClientID());
             stmt.setDate(6, new Date(request.getStartDate().getTime()));
             stmt.setString(7, request.getRequestStatus());
@@ -37,7 +37,7 @@ public class RequestDAOImpl implements RequestDAO {
             stmt.setString(1, request.getOrgTechType());
             stmt.setString(2, request.getOrgTechModel());
             stmt.setString(3, request.getProblemDescription());
-            stmt.setInt(4, request.getMaterID());
+            stmt.setInt(4, request.getMasterID());
             stmt.setString(5, request.getRequestStatus());
             stmt.setInt(6, request.getRequestID());
             stmt.executeUpdate();

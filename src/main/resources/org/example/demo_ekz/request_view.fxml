@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo_ekz.RequestController">
+    <children>
+        <TableView fx:id="requestTableView" prefHeight="200.0" prefWidth="600.0">
+            <columns>
+                <TableColumn fx:id="columnRequestID" prefWidth="100.0" text="Request ID" />
+                <TableColumn fx:id="columnStartDate" prefWidth="150.0" text="Start Date" />
+                <TableColumn fx:id="columnOrgTechType" prefWidth="150.0" text="Tech Type" />
+                <TableColumn fx:id="columnOrgTechModel" prefWidth="150.0" text="Tech Model" />
+                <TableColumn fx:id="columnProblemDescription" prefWidth="200.0" text="Problem Description" />
+                <TableColumn fx:id="columnRequestStatus" prefWidth="100.0" text="Status" />
+                <TableColumn fx:id="columnCompletionDate" prefWidth="150.0" text="Completion Date" />
+                <TableColumn fx:id="columnRepairParts" prefWidth="150.0" text="Repair Parts" />
+                <TableColumn fx:id="columnMasterID" prefWidth="100.0" text="Master ID" />
+                <TableColumn fx:id="columnClientID" prefWidth="100.0" text="Client ID" />
+            </columns>
+        </TableView>
+        <Label fx:id="statusLabel" text="Статус" />
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <children>
+                <Button fx:id="button" alignment="CENTER" cache="true" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" text="Нажми на меня" textAlignment="CENTER" textFill="#141414">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </Button>
+            </children>
+        </HBox>
+    </children>
+</VBox>
